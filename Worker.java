@@ -5,7 +5,7 @@ public class Worker {
     }
 
     @FunctionalInterface
-    public interface OnTaskErrorListener{
+    public interface OnTaskErrorListener {
         void onError(String result);
     }
 
@@ -18,18 +18,18 @@ public class Worker {
     }
 
 
-    public void start () {
+    public void start() {
         for (int i = 0; i < 100; i++) {
-          if (i!=33) {
-              callback.onDone("Task " + i + " is done");
-          }
-          if (i==33){
-                    errorCallback.onError("Task " + i + " ERROR");
-                }
+            if (i != 33) {
+                callback.onDone("Task " + i + " is done");
+            } else {
+                errorCallback.onError("Task " + i + " ERROR");
+            }
             continue;
-                }
-            }
+        }
+    }
 
-            }
+}
+
 
 
